@@ -1,3 +1,18 @@
+/*
+Problem 1: Pharmacy-wise hospital-exclusive medicine usage (2022)
+
+Objective:
+For each pharmacy, calculate:
+- total quantity of medicines prescribed in 2022
+- total quantity of hospital-exclusive medicines prescribed in 2022
+- percentage of hospital-exclusive medicines
+
+Concepts Used:
+- LEFT JOIN
+- Conditional aggregation (CASE + SUM)
+- NULL handling with IFNULL and NULLIF
+- Year-based filtering
+*/
 SELECT Pharmacy.pharmacyID, Pharmacy.pharmacyName, IFNULL(SUM(Contain.Quantity), 0) AS total_quantity_2022,
 IFNULL(SUM(CASE WHEN LOWER(Medicine.hospitalExclusive) = 'y' THEN Contain.Quantity ELSE 0 END),0) AS hospital_exclusive_quantity,
 ROUND(100.0 *IFNULL(SUM(CASE WHEN LOWER(Medicine.hospitalExclusive) = 'y' THEN Contain.Quantity ELSE 0 END),0)/

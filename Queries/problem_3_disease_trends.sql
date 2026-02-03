@@ -1,3 +1,18 @@
+/*
+Problem 3: Most and least treated diseases per state (2022)
+
+Objective:
+For each state, identify:
+- most treated disease(s)
+- least treated disease(s)
+- corresponding treatment counts
+
+Concepts Used:
+- Common Table Expressions (CTEs)
+- Aggregation
+- MAX and MIN
+- GROUP_CONCAT to handle ties
+*/
 WITH DiseaseTreatmentCount AS (SELECT Address.state, Disease.diseaseName, COUNT(Treatment.treatmentID) AS treatment_count
 FROM Treatment JOIN Disease ON Treatment.diseaseID = Disease.diseaseID
 JOIN Patient ON Treatment.patientID = Patient.patientID

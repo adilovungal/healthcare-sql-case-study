@@ -1,3 +1,17 @@
+/*
+Problem 2: State-wise percentage of treatments without insurance claims
+
+Objective:
+For each state, calculate:
+- total number of treatments
+- number of treatments without insurance claims
+- percentage of treatments without insurance
+
+Concepts Used:
+- Multi-table JOINs
+- CASE expression
+- Aggregation and GROUP BY
+*/
 create database project_healthcare;
 SELECT
   address.state,
