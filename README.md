@@ -179,6 +179,10 @@ healthcare-sql-case-study/
 ---
 
 
+\## Dashboard
+Power BI dashboard covering pharmacy performance, insurance coverage by state, 
+and disease burden analysis. Open Healthcare Dashboard.pbix in Power BI Desktop to view.
+
 
 \## Notes
 
